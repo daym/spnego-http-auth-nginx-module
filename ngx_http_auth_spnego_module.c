@@ -864,6 +864,8 @@ ngx_http_auth_spnego_auth_user_gss(
         }
         ngx_encode_base64(&ctx->token_out_b64, &spnego_token);
         gss_release_buffer(&minor_status2, &output_token);
+    } else {
+        ctx->token_out_b64.len = 0;
     }
 
     /* getting user name at the other end of the request */
