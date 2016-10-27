@@ -10,6 +10,8 @@ if test -n "$ngx_module_link"; then
     ngx_module_name=ngx_http_auth_spnego_module
     ngx_module_srcs="$ngx_addon_dir/ngx_http_auth_spnego_module.c"
     ngx_module_libs="$ngx_feature_libs"
+    xxcflags="`pkg-config --cflags com_err`"
+    ngx_module_incs="${xxcflags#-I}"
     . auto/module
 else
     HTTP_MODULES="$HTTP_MODULES ngx_http_auth_spnego_module"
