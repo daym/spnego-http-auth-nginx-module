@@ -45,6 +45,10 @@ or just build the modules
 
 Note that the minimal nginx version required for this to work is 1.9.13.
 
+Modules can be loaded into NGINX with the new load_module directive. For example:
+
+    load_module modules/ngx_http_auth_spnego_module.so;
+
 Configuration reference
 -----------------------
 
