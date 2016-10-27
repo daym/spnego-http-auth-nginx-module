@@ -27,11 +27,23 @@ Installation
 1. Extract to a directory
 1. Clone this module into the directory
 1. Follow the [nginx install documentation](http://nginx.org/en/docs/install.html)
-and pass an `--add-module` option to nginx configure:
+and pass an `--add-dynamic-module` option to nginx configure:
 
-    ./configure --add-module=spnego-http-auth-nginx-module
+    ./configure --add-dynamic-module=spnego-http-auth-nginx-module
 
 Note that if it isn't clear, you do need KRB5 (MIT or Heimdal) header files installed.  On Debian based distributions, including Ubuntu, this is the krb5-multidev, libkrb5-dev, heimdal-dev, or heimdal-multidev package depending on your environment.  On other Linux distributions, you want the development libraries that provide gssapi_krb5.h.
+
+Then either build all of nginx,
+
+    make
+
+or just build the modules
+
+    make modules
+
+.
+
+Note that the minimal nginx version required for this to work is 1.9.13.
 
 Configuration reference
 -----------------------
